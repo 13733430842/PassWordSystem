@@ -14,40 +14,46 @@ public class Client {
 	 * @param args
 	 */
 
-	public static void main(String[] args) {
-		/**
-		 * Ä¦Ë¹ÃÜÂë(²»ÄÜ¼ÓÃÜÖĞÎÄ)
-		 * zhÃÜÂë(×ÔÖÆÃÜÂë)
+public static void main(String[] args) {
+		 /**
+		 * æ‘©æ–¯å¯†ç (ä¸èƒ½åŠ å¯†ä¸­æ–‡)
+		 * zhå¯†ç (è‡ªåˆ¶å¯†ç )
+		 * è¿™é‡Œæˆ‘ä½¿ç”¨äº†ä¸¤ç§åŠ å¯†æ–¹å¼ï¼Œå…ˆä½¿ç”¨è‡ªåˆ¶çš„åŠ å¯†ï¼Œç„¶åä½¿ç”¨æ‘©æ–¯åŠ å¯†è¿›è¡ŒäºŒæ¬¡åŠ å¯†
+		 * å¯ä»¥åˆ†å¼€å•ç‹¬ä½¿ç”¨
 		 */
-		System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ªÄ¦Ë¹ºÍzhÃÜÂëÏµÍ³¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-		Encryption encryption=new Encryption();//Ä¦Ë¹¼ÓÃÜ
-		Decryption decryption=new Decryption();//Ä¦Ë¹½âÃÜ
-		ASCII ascii=new ASCII();//×ÔÖÆ¼ÓÃÜ
-		Resuilt resuilt=new Resuilt(1);//×ÔÖÆ½âÃÜ
-		ascii.setpwd("ĞÇêØÏòÈÙ");
-		String string=ascii.getresuilt(1);
-		resuilt.setpwd(string);
-		encryption.setpwd(string);
-		decryption.setpwd(encryption.getresuilt());
-		System.out.println("zh¼ÓÃÜ£º"+string);
-		System.out.println("zh½âÃÜ£º"+resuilt.getresuilt());
-		System.out.println("mosi¼ÓÃÜ£º"+encryption.getresuilt());
-		System.out.println("Ä¦Ë¹½âÃÜ£º"+decryption.getresuilt());
-		System.out.println("zh¼ÓÃÜ³¤¶È£º"+string.length());
-		System.out.println("mosi¼ÓÃÜ³¤¶È£º"+encryption.getresuilt().length());
-
+		System.out.println("â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”æ‘©æ–¯å’Œzhå¯†ç ç³»ç»Ÿâ€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”");
+    		//å›½é™…é€šç”¨çš„æ‘©æ–¯å¯†ç ï¼ˆæ‰©å±•ç¬¦å·è¿˜åŠ å…¥äº†ä¸€ç‚¹è‡ªåˆ›çš„æ‘©æ–¯ç ï¼‰
+		Encryption encryption=new Encryption();	//æ‘©æ–¯åŠ å¯†
+		Decryption decryption=new Decryption();	//æ‘©æ–¯è§£å¯†
+    		//è‡ªåˆ¶å¯†ç æœ‰ä¸‰ç§æ¨¡å¼ï¼Œåˆ†åˆ«æ˜¯1ã€2ã€3
+		ASCII ascii=new ASCII();	//è‡ªåˆ¶åŠ å¯†
+		Resuilt resuilt=new Resuilt(1);	//è‡ªåˆ¶è§£å¯†
+    
+		ascii.setpwd("æ˜Ÿæ›¦å‘è£");	//è¾“å…¥åŠ å¯†å†…å®¹
+		String string=ascii.getresuilt(1);	//ä½¿ç”¨åŠ å¯†1çš„æ¨¡å¼ï¼Œè·å¾—å¯†æ–‡
+		resuilt.setpwd(string);	//ä½¿ç”¨ç›¸åº”çš„æ¨¡å¼è¿›è¡Œè§£å¯†
+    
+		encryption.setpwd(string);	//å°†è‡ªåˆ¶åŠ å¯†çš„å¯†æ–‡è¿›è¡Œæ‘©æ–¯å¯†ç çš„äºŒæ¬¡åŠ å¯†
+		decryption.setpwd(encryption.getresuilt());	//ä½¿ç”¨æ‘©æ–¯è§£å¯†
+    
+		System.out.println("zhåŠ å¯†ï¼š"+string);	//è‡ªåˆ¶åŠ å¯†çš„å¯†æ–‡
+		System.out.println("zhè§£å¯†ï¼š"+resuilt.getresuilt());	//è‡ªåˆ¶è§£å¯†çš„æ˜æ–‡
+		System.out.println("æ‘©æ–¯åŠ å¯†ï¼š"+encryption.getresuilt());	//æ‘©æ–¯åŠ å¯†çš„å¯†æ–‡ï¼ˆè¿™é‡Œæ˜¯äºŒæ¬¡åŠ å¯†ï¼Œå› ä¸ºè¿™é‡ŒåŠ å¯†çš„å†…å®¹æ˜¯è‡ªåˆ¶åŠ å¯†çš„å¯†æ–‡ï¼‰
+		System.out.println("æ‘©æ–¯è§£å¯†ï¼š"+decryption.getresuilt());	//æ‘©æ–¯è§£å¯†çš„æ˜æ–‡ï¼ˆè¿™é‡Œè§£å¯†å¾—åˆ°çš„æ˜æ–‡æ˜¯è‡ªåˆ¶åŠ å¯†çš„å¯†æ–‡ï¼‰
+		System.out.println("zhåŠ å¯†é•¿åº¦ï¼š"+string.length());	//è‡ªåˆ¶åŠ å¯†çš„å¯†æ–‡é•¿åº¦
+		System.out.println("mosiåŠ å¯†é•¿åº¦ï¼š"+encryption.getresuilt().length());	//æ‘©æ–¯åŠ å¯†çš„å¯†æ–‡é•¿åº¦
 		/**
-		 * Ëæ»úÃØÔ¿ÃÜÂë
-		 * ×¢Òâ£º¼ÓÃÜµÄ×Ö·û³¤¶ÈÔ½³¤ºÄÊ±Ô½³¤
+		 * éšæœºç§˜é’¥å¯†ç 
+		 * æ³¨æ„ï¼šåŠ å¯†çš„å­—ç¬¦é•¿åº¦è¶Šé•¿è€—æ—¶è¶Šé•¿
 		 */
-		System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ªËæ»úÃØÔ¿ÏµÍ³¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-		jiami jiami=new jiami("ĞÇêØÏòÈÙ");//¼ÓÃÜ
-		String miwen=jiami.Resuilt();
-		String miyao=jiami.getMiyao();
-		jiemi jiemi=new jiemi(miwen,miyao);//½âÃÜ
-		System.out.println("¼ÓÃÜÃÜÎÄ:"+miwen+"\nËæ»úÃØÔ¿:"+miyao);
-		System.out.println("½âÃÜÃ÷ÎÄ:"+jiemi.Resuilt());
-
+		System.out.println("â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”éšæœºç§˜é’¥ç³»ç»Ÿâ€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”");
+		jiami jiami=new jiami("æ˜Ÿæ›¦å‘è£");	//åŠ å¯†ï¼Œè¾“å…¥åŠ å¯†å†…å®¹
+		String miwen=jiami.Resuilt();	//è·å¾—åŠ å¯†åçš„å¯†æ–‡
+		String miyao=jiami.getMiyao();	//è·å¾—å¯¹åº”çš„ç§˜é’¥
+		jiemi jiemi=new jiemi(miwen,miyao);	//è§£å¯†ï¼Œå°†å¯†æ–‡å’Œå¯¹åº”çš„ç§˜é’¥è¾“å…¥
+		System.out.println("åŠ å¯†å¯†æ–‡:"+miwen+"\néšæœºç§˜é’¥:"+miyao);
+		System.out.println("è§£å¯†æ˜æ–‡:"+jiemi.Resuilt());	//å¾—åˆ°è§£å¯†åçš„æ˜æ–‡
+	
 	}
 
 }
