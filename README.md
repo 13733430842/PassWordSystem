@@ -1,5 +1,5 @@
 # PassWordSystem
-## 在[原项目](https://github.com/ZhangHeng0805/PassWord)的基础上，新增随机秘钥的密码系统(摩斯密码和自制(zh)密码)
+## 在[原项目](https://github.com/ZhangHeng0805/PassWord)(摩斯密码和自制(zh)密码)的基础上，新增随机秘钥的密码系统
 
 ``` 
  public static void main(String[] args) {
