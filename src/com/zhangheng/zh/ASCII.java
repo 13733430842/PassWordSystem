@@ -14,7 +14,7 @@ private int mode;
 
 	public ASCII(String pwd,int mode) {
 		if (pwd.isEmpty()){
-			throw new NullPointerException("参数'pwd'为空");
+			throw new NullPointerException("构造函数ASCII(String pwd,int mode)中的参数'pwd'为空");
 		}else {
 			this.pwd = pwd;
 		}
