@@ -1,7 +1,7 @@
 # PassWordSystem
 # 新增随机秘钥的密码系统(摩斯密码和自制(zh)密码)
 
-``` 
+```java
 public static void main(String[] args) {
 		 /**
 		 * 摩斯密码(不能加密中文)
