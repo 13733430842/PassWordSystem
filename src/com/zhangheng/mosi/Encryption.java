@@ -9,7 +9,11 @@ public class Encryption {
 private String pwd;
 
 	public Encryption(String pwd) {
-		this.pwd = pwd;
+		if (pwd.isEmpty()){
+			throw new NullPointerException("构造函数Encryption(String pwd)中的参数'pwd'为null");
+		}else {
+			this.pwd = pwd;
+		}
 	}
 
 private ArrayList<String> strArrayList(){//将字符串拆解为集合

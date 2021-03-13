@@ -13,7 +13,7 @@ public class Jiami {
 
     public Jiami(String mingwen) {
         if (mingwen.isEmpty()){
-            throw new NullPointerException("构造函数Jiami(String mingwen)的参数'mingwen'为空");
+            throw new NullPointerException("构造函数Jiami(String mingwen)的参数'mingwen'为null");
         }
         this.mingwen = mingwen;
         setMiyao();

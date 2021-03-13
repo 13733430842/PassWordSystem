@@ -11,12 +11,12 @@ public class Jiemi {
 
     public Jiemi(String miwen, String miyao) {
         if (miwen.isEmpty()){
-            throw new NullPointerException("构造函数Jiemi(String miwen, String miyao)中的参数'miwen'为空");
+            throw new NullPointerException("构造函数Jiemi(String miwen, String miyao)中的参数'miwen'为null");
         }else {
             this.miwen = miwen;
         }
         if (miyao.isEmpty()){
-            throw new NullPointerException("构造函数Jiemi(String miwen, String miyao)中的参数'miyao'为空");
+            throw new NullPointerException("构造函数Jiemi(String miwen, String miyao)中的参数'miyao'为null");
         }else {
             this.miyao = miyao;
         }

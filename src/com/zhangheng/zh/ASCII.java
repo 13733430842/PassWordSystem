@@ -14,7 +14,7 @@ private int mode;
 
 	public ASCII(String pwd,int mode) {
 		if (pwd.isEmpty()){
-			throw new NullPointerException("构造函数ASCII(String pwd,int mode)中的参数'pwd'为空");
+			throw new NullPointerException("构造函数ASCII(String pwd,int mode)中的参数'pwd'为null");
 		}else {
 			this.pwd = pwd;
 		}
@@ -39,6 +39,7 @@ public String getresuilt()  {//将集合转换为字符串
 	
 	String str="";
 	for (int i = 0; i <integers().size(); i++) {
+		boolean f=false;
 		switch (mode) {
 			case 1:
 				str += String.valueOf(integers().get(i) + ((i + 2) * (i + 1))) + " ";    //加密1 x+((i+1)*(i+2))
@@ -50,11 +51,16 @@ public String getresuilt()  {//将集合转换为字符串
 				str += String.valueOf(integers().get(i) + ((integers().size() - i) * (i + 1))) + " ";        //加密2.1
 				break;
 			default:
-				GetError.err1();
+				f=true;
 				break;
 		}
+		if (f) {
+			GetError.err1();
+			break;
+		}
+		}
 
-	}
+
 	return str;
 }
 

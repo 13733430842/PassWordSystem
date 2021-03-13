@@ -9,6 +9,9 @@ public class Decryption {
 	private String pwd;
 
 	public Decryption(String pwd) {
+	    if (pwd.isEmpty()){
+	        throw new NullPointerException("构造函数Decryption(String pwd)中的参数'pwd'为null");
+        }
 		this.pwd = pwd;
 	}
 

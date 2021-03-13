@@ -12,7 +12,7 @@ public class Resuilt {
 
 	public Resuilt(String pwd, int mode) {
 		if (pwd.isEmpty()){
-			throw new NullPointerException("构造函数Resuilt(String pwd, int mode)中的参数'pwd'为空");
+			throw new NullPointerException("构造函数Resuilt(String pwd, int mode)中的参数'pwd'为null");
 		}else {
 			this.pwd = pwd;
 		}
@@ -33,6 +33,7 @@ public class Resuilt {
 	private ArrayList<Character> characters(){
 		ArrayList<Integer> integers=new ArrayList<Integer>();
 		ArrayList<Character> characters=new ArrayList<Character>();
+		boolean f=false;
 		for (int i = 0; i < strArrayList().size(); i++) {
 			int a=Integer.valueOf(strArrayList().get(i));
 			switch (n){
@@ -46,10 +47,13 @@ public class Resuilt {
 					integers.add(a-((strArrayList().size()-i)*(i+1)));	//解密2.1
 					break;
 					default:
-						GetError.err2();
+						f=true;
 						break;
 			}
-
+			if (f){
+				GetError.err2();
+				break;
+			}
 		}
 		for (int j = 0; j < integers.size(); j++) {
 			int b=integers.get(j);
