@@ -1,5 +1,6 @@
-package zh;
+package com.zhangheng.zh;
 
+import com.zhangheng.err.GetError;
 import java.util.ArrayList;
 
 /**
@@ -8,13 +9,16 @@ import java.util.ArrayList;
 public class Resuilt {
 	private String pwd;
 	private int n;
-	public Resuilt(int n) {
-		// TODO Auto-generated constructor stub
-		this.n=n;
+
+	public Resuilt(String pwd, int mode) {
+		if (pwd.isEmpty()){
+			throw new NullPointerException("参数'pwd'为空");
+		}else {
+			this.pwd = pwd;
+		}
+		this.n = mode;
 	}
-	public void setpwd(String pwd) {
-		this.pwd=pwd;
-	}
+
 	private ArrayList<String> strArrayList(){
 		String b=pwd;
 		ArrayList<String> list=new ArrayList<String>();
@@ -31,13 +35,21 @@ public class Resuilt {
 		ArrayList<Character> characters=new ArrayList<Character>();
 		for (int i = 0; i < strArrayList().size(); i++) {
 			int a=Integer.valueOf(strArrayList().get(i));
-			if (n==1) {
-				integers.add(a-((i+2)*(i+1)));		//解密1
-			}else if (n==2) {
-				integers.add(a-((i+strArrayList().size())*(i+1)));	//解密2
-			}else if (n==3) {
-				integers.add(a-((strArrayList().size()-i)*(i+1)));	//解密2.1
-			}	
+			switch (n){
+				case 1:
+					integers.add(a-((i+2)*(i+1)));		//解密1
+					break;
+				case 2:
+					integers.add(a-((i+strArrayList().size())*(i+1)));	//解密2
+					break;
+				case 3:
+					integers.add(a-((strArrayList().size()-i)*(i+1)));	//解密2.1
+					break;
+					default:
+						GetError.err2();
+						break;
+			}
+
 		}
 		for (int j = 0; j < integers.size(); j++) {
 			int b=integers.get(j);

@@ -1,43 +1,46 @@
-package zh_miyao;
+package com.zhangheng.zh_miyao;
 
-import math.math;
+import com.zhangheng.math.math;
 
 import java.util.ArrayList;
 
 /**
- * Ëæ»úÃØÔ¿ÃÜÂë¼ÓÃÜ
+ * éšæœºç§˜é’¥å¯†ç åŠ å¯†
  */
-public class jiami {
+public class Jiami {
     private String miyao,mingwen,miwen;
     private ArrayList<Integer> i_miyao;
 
-    public jiami(String mingwen) {
+    public Jiami(String mingwen) {
+        if (mingwen.isEmpty()){
+            throw new NullPointerException("æ„é€ å‡½æ•°Jiami(String mingwen)çš„å‚æ•°'mingwen'ä¸ºç©º");
+        }
         this.mingwen = mingwen;
         setMiyao();
     }
-    public String getMiyao() {//·µ»ØËæ»ú¼ÓÃÜºóÃØÔ¿
+    public String getMiyao() {//è¿”å›éšæœºåŠ å¯†åç§˜é’¥
         String string="";
         String in="";
         if (miyao.length()!=0){
             string=miyao;
         }else {
-            string="ÏÈ»ñÈ¡ÃÜÎÄ";
+            throw new NullPointerException("ç§˜é’¥ä¸ºç©ºï¼Œè¯·å…ˆè·å–å¯†æ–‡");
         }
         return string;
     }
-    private void setMiyao() {//»ñÈ¡Ëæ»úÂëÃØÔ¿
+    private void setMiyao() {//è·å–éšæœºç ç§˜é’¥
         math math=new math(mingwen.length());
         miyao = math.radom();
     }
 
-    private ArrayList<Character> characters_mingwen(){//½«Ã÷ÎÄ×Ö·û´®×ª»»Îª×Ö·û¼¯ºÏ
+    private ArrayList<Character> characters_mingwen(){//å°†æ˜æ–‡å­—ç¬¦ä¸²è½¬æ¢ä¸ºå­—ç¬¦é›†åˆ
         ArrayList<Character> characters=new ArrayList<Character>();
         for (int i = 0; i < mingwen.length(); i++) {
             characters.add(mingwen.charAt(i));
         }
         return characters;
     }
-    private ArrayList<Integer> integers_miyao(){//½«ÃØÔ¿×ª»»Îª(ASCIIÂë¼¯ºÏ)µ¥¸öÊı×Ö
+    private ArrayList<Integer> integers_miyao(){//å°†ç§˜é’¥è½¬æ¢ä¸º(ASCIIç é›†åˆ)å•ä¸ªæ•°å­—
         ArrayList<Integer> integers=new ArrayList<Integer>();
         for (int i
              = 0; i < miyao.length(); i++) {
@@ -48,7 +51,7 @@ public class jiami {
         i_miyao=integers;
         return integers;
     }
-    private ArrayList<Integer> integers_mingwen(){//½«×Ö·û¼¯ºÏ×ª»»ÎªASCIIÂë¼¯ºÏ
+    private ArrayList<Integer> integers_mingwen(){//å°†å­—ç¬¦é›†åˆè½¬æ¢ä¸ºASCIIç é›†åˆ
 
         ArrayList<Integer> integers=new ArrayList<Integer>();
         for (int i = 0; i < characters_mingwen().size(); i++) {
@@ -56,7 +59,7 @@ public class jiami {
         }
         return integers;
     }
-    private ArrayList<Integer> integers_miwen(){//½«£¨Ã÷ÎÄASCIIÂë¼¯ºÏ£©ºÍ£¨ÃØÔ¿ASCIIÂë¼¯ºÏ£©×éºÏ³É£¨ÃÜÎÄASCIIÂë¼¯ºÏ£©
+    private ArrayList<Integer> integers_miwen(){//å°†ï¼ˆæ˜æ–‡ASCIIç é›†åˆï¼‰å’Œï¼ˆç§˜é’¥ASCIIç é›†åˆï¼‰ç»„åˆæˆï¼ˆå¯†æ–‡ASCIIç é›†åˆï¼‰
         ArrayList<Integer> integers=new ArrayList<Integer>();
         for (int i=0;i<integers_mingwen().size();i++){
 
@@ -65,7 +68,7 @@ public class jiami {
         }
         return integers;
     }
-    private ArrayList<Character> characters_miwen() {//½«ÃÜÎÄASCIIÂë¼¯ºÏ×ª»»Îª×Ö·û¼¯ºÏ
+    private ArrayList<Character> characters_miwen() {//å°†å¯†æ–‡ASCIIç é›†åˆè½¬æ¢ä¸ºå­—ç¬¦é›†åˆ
         ArrayList<Character> characters = new ArrayList<Character>();
         for (int i = 0; i < integers_miwen().size(); i++) {
             int b = integers_miwen().get(i);

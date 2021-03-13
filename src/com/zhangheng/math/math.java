@@ -1,4 +1,4 @@
-package math;
+package com.zhangheng.math;
 
 /**
  * 随机数生成

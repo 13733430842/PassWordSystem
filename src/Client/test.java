@@ -1,8 +1,14 @@
-# PassWordSystem
-## 在[原项目](https://github.com/ZhangHeng0805/PassWord)的基础上，新增随机秘钥的密码系统(摩斯密码和自制(zh)密码)
+package Client;
 
-``` 
- public static void main(String[] args) {
+import com.zhangheng.mosi.Decryption;
+import com.zhangheng.mosi.Encryption;
+import com.zhangheng.zh.ASCII;
+import com.zhangheng.zh.Resuilt;
+import com.zhangheng.zh_miyao.Jiami;
+import com.zhangheng.zh_miyao.Jiemi;
+
+public class test {
+    public static void main(String[] args) {
 
 
         /*
@@ -44,4 +50,4 @@
         System.out.println("\n"+resuilt2);
 
     }
-```
+}

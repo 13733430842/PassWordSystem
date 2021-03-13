@@ -1,21 +1,21 @@
-package mosi;
+package com.zhangheng.mosi;
 
 import java.util.ArrayList;
 
 /**
- * 摩斯密码加密
+ * 摩斯密码解密
  */
 public class Decryption {
 	private String pwd;
 
-	public void setpwd(String pwd) {
-		this.pwd=pwd;
+	public Decryption(String pwd) {
+		this.pwd = pwd;
 	}
+
 	private ArrayList<String> strArrayList(){
-		String b=pwd;
-		//System.out.println(b);
+
 		ArrayList<String> list=new ArrayList<String>();
-		String[] c=b.split(" ");
+		String[] c=pwd.split(" ");
 		for (int i = 0; i < c.length; i++) {
 			//System.out.println(c[i]);
 			String d=c[i];
@@ -101,7 +101,7 @@ public class Decryption {
 			pwdList.add("8");
 		}else if ("----.".equals(a)) {
 			pwdList.add("9");
-		}else if (".-.-.-".equals(a)) {//�ַ�
+		}else if (".-.-.-".equals(a)) {
 			pwdList.add(".");
 		}else if ("---...".equals(a)) {
 			pwdList.add(":");
